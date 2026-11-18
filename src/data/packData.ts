@@ -196,7 +196,7 @@ export const TESTIMONIAL_SLIDES: TestimonialSlide[] = [
   },
 ];
 
-export const OFFER_FEATURES: { text: string; boldPrefix?: string }[] = [
+export const OFFER_FEATURES: { text: string; boldPrefix?: string; isGift?: boolean }[] = [
   { text: '100.000 Cortes Virais' },
   { text: '41 Nichos Diferentes' },
   { text: 'Acesso Vitalício' },
@@ -204,18 +204,20 @@ export const OFFER_FEATURES: { text: string; boldPrefix?: string }[] = [
   { text: 'Vídeos 100% Licenciados (Zero Bloqueios nas Plataformas)' },
   { text: "Todos os Vídeos Sem Marca d'Água" },
   { text: 'Cortes Livres de Metadados' },
-  { text: '+3 Super Bônus' },
-  { text: 'Pack de Memes' },
-  { text: 'Efeitos Sonoros' },
-  { text: 'Músicas sem Copyright' },
-  { text: 'Suporte 24h Ensinando a Viralizar + Número de Quem Já Viralizou' },
+  { text: '+3 Super Bônus', isGift: true },
+  { text: 'Pack de Memes', isGift: true },
+  { text: 'Efeitos Sonoros', isGift: true },
+  { text: 'Músicas sem Copyright', isGift: true },
+  { text: 'Suporte 24h Ensinando a Viralizar + Número de Quem Já Viralizou', isGift: true },
   {
     boldPrefix: 'Bônus Extra 1:',
     text: '+50mil cortes virais (totalizando 150mil cortes virais)',
+    isGift: true,
   },
   {
     boldPrefix: 'Presente Surpresa:',
     text: 'Você Também Receberá um Presentinho Especial que Preparamos para Você Ainda Hoje…',
+    isGift: true,
   },
 ];
 

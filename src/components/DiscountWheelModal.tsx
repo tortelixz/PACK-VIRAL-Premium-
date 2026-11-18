@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Sparkles, Volume2, X } from 'lucide-react';
+import { Sparkles, Volume2 } from 'lucide-react';
 import {
   playConfettiAndApplause,
   playWheelTick,
@@ -9,7 +9,6 @@ import {
 interface DiscountWheelModalProps {
   isOpen: boolean;
   onClaimDiscount: () => void;
-  onClose: () => void;
 }
 
 interface WheelSegment {
@@ -65,7 +64,7 @@ interface ConfettiPiece {
 
 const CONFETTI_COLORS = ['#05D321', '#58D4F2', '#A855F7', '#FF2E93', '#FACC15', '#FFFFFF'];
 
-export function DiscountWheelModal({ isOpen, onClaimDiscount, onClose }: DiscountWheelModalProps) {
+export function DiscountWheelModal({ isOpen, onClaimDiscount }: DiscountWheelModalProps) {
   const [isSpinning, setIsSpinning] = useState(false);
   const [hasWon, setHasWon] = useState(false);
 
@@ -80,18 +79,10 @@ export function DiscountWheelModal({ isOpen, onClaimDiscount, onClose }: Discoun
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && !isSpinning) {
-        onClose();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-
     return () => {
       document.body.style.overflow = prevOverflow;
-      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, isSpinning, onClose]);
+  }, [isOpen]);
 
   useEffect(() => {
     return () => {
@@ -255,16 +246,6 @@ export function DiscountWheelModal({ isOpen, onClaimDiscount, onClose }: Discoun
 
       <div className="relative z-20 w-full max-w-[430px] rounded-[26px] p-[2px] bg-[linear-gradient(150deg,#58D4F2_0%,#A855F7_52%,#FF2E93_100%)] shadow-[0_0_55px_rgba(88,212,242,0.28),0_24px_70px_rgba(0,0,0,0.85)]">
         <div className="relative rounded-[24px] bg-[radial-gradient(ellipse_at_top,#102344_0%,#081022_55%,#050914_100%)] px-4 py-5 sm:px-6 sm:py-6 text-center overflow-hidden">
-          {!isSpinning && (
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label="Fechar roleta"
-              className="absolute top-3.5 right-3.5 z-20 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-300 hover:text-white transition-colors cursor-pointer"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
 
           {!hasWon ? (
             <>

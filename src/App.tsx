@@ -1151,12 +1151,26 @@ export default function App() {
                               feature.boldPrefix ? 'items-start font-normal' : 'items-center'
                             } justify-center gap-2.5 py-1.5`}
                           >
-                            <CircleCheckBig
-                              className={`w-5 h-5 shrink-0 fill-[#4EE949] text-[#09132B] ${
-                                feature.boldPrefix ? 'mt-0.5' : ''
-                              }`}
-                              aria-hidden="true"
-                            />
+                            {feature.isGift ? (
+                              <img
+                                alt="🎁"
+                                width={20}
+                                height={20}
+                                loading="eager"
+                                decoding="async"
+                                className={`w-5 h-5 shrink-0 inline-block select-none ${
+                                  feature.boldPrefix ? 'mt-0.5' : ''
+                                }`}
+                                src="/assets/aistudio/1f381_05a65621.svg"
+                              />
+                            ) : (
+                              <CircleCheckBig
+                                className={`w-5 h-5 shrink-0 fill-[#4EE949] text-[#09132B] ${
+                                  feature.boldPrefix ? 'mt-0.5' : ''
+                                }`}
+                                aria-hidden="true"
+                              />
+                            )}
                             <span>
                               {feature.boldPrefix && <b>{feature.boldPrefix} </b>}
                               {feature.text}
@@ -1397,7 +1411,6 @@ export default function App() {
           setDiscountUnlocked(true);
           setIsWheelOpen(false);
         }}
-        onClose={() => setIsWheelOpen(false)}
       />
     </div>
   );
