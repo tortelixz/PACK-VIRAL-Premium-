@@ -171,7 +171,7 @@ export default function App() {
               </span>
               <span className="block max-w-full gradient-blue-text px-0.5">conteúdo do zero</span>
             </span>
-            <span className="hidden sm:flex flex-col items-center w-full max-w-full text-[clamp(2rem,5.4vw,4.75rem)]">
+            <span className="hidden sm:flex flex-col items-center w-full max-w-full text-[clamp(2.35rem,6.1vw,5.4rem)]">
               <span className="block max-w-full">Pare de perder tempo</span>
               <span className="block max-w-full gradient-blue-text px-1">criando conteúdo do zero</span>
             </span>
@@ -191,7 +191,7 @@ export default function App() {
               fetchPriority="high"
               className="w-full h-auto block object-contain select-none"
               draggable={false}
-              src="/assets/aistudio/smartphone-packviral_0bd7d211.webp"
+              src="/assets/aistudio/Smartphone_PackViral_com__cones_Sociais_39017ad6.png"
             />
           </div>
 
