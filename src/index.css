@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+    color: #fff;
+    background-color: #050912;
+    margin: 0;
+    font-family: "Plus Jakarta Sans", "Montserrat", sans-serif;
+    overflow-x: clip;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes rocketFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(3deg);
+  }
+}
+
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-arrow-bounce {
+  will-change: transform;
+  animation: 1.2s ease-in-out infinite arrowBounce;
+}
+
+.animate-rocket-float {
+  will-change: transform;
+  animation: 2.2s ease-in-out infinite rocketFloat;
+}
+
+.animate-pulse-glow {
+  will-change: transform;
+  animation: 2.4s ease-in-out infinite pulseGlow;
+}
+
+.green-glow-button {
+  background-color: #05a81e;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s;
+  box-shadow: 0 0 22px #05a81e8c;
+}
+
+.green-glow-button:hover {
+  background-color: #048c18;
+  transform: scale(1.03);
+}
+
+.gradient-blue-text {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#58d4f2 0%, #4ec7e6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  max-width: 100%;
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050912;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#172338 0%, #24193c 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#58d4f2 0%, #a855f7 65%, #ff2e93 100%);
+}

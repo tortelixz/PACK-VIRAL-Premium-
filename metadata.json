@@ -1,0 +1,6 @@
+{
+  "name": "Pack Verso",
+  "description": "Use 100.000 Vídeos Prontos que já viralizaram e comece a crescer hoje mesmo no TikTok e Instagram sem aparecer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
