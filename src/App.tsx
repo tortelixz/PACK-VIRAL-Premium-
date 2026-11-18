@@ -16,8 +16,10 @@ import {
   SquarePen,
   VideoOff,
 } from 'lucide-react';
+import { DiscountWheelModal } from './components/DiscountWheelModal';
 import { LegalModal, type LegalModalType } from './components/LegalModal';
 import { ProfileCard } from './components/ProfileCard';
+import { VslPlayer } from './components/VslPlayer';
 import {
   CHECKOUT_URL,
   FAQ_ITEMS,
@@ -67,6 +69,8 @@ export default function App() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [openFaqIndices, setOpenFaqIndices] = useState<number[]>([0, 1, 2, 3, 4, 5]);
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
+  const [isWheelOpen, setIsWheelOpen] = useState(true);
+  const [discountUnlocked, setDiscountUnlocked] = useState(false);
   const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
@@ -139,6 +143,12 @@ export default function App() {
             </span>
           </div>
 
+          {discountUnlocked && (
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#05D321]/15 border border-[#05D321]/60 text-[#49F503] text-[11px] sm:text-xs font-[900] uppercase tracking-wider mb-2.5 shadow-[0_0_18px_rgba(5,211,33,0.28)]">
+              <span>🎉 CUPOM DE 85% DE DESCONTO ATIVADO!</span>
+            </div>
+          )}
+
           <div className="w-full flex justify-center items-center px-4 mb-2.5 sm:mb-4">
             <img
               alt="Pack Viral com Bônus Exclusivo GTA 6"
@@ -167,14 +177,6 @@ export default function App() {
             </span>
           </h1>
 
-          <p className="text-[15.5px] sm:text-xl font-medium text-neutral-200 text-center max-w-2xl px-3 sm:px-6 mb-2.5 sm:mb-3 leading-[1.4] mx-auto">
-            Use{' '}
-            <span className="text-white font-bold underline decoration-[#4A72A3] underline-offset-4">
-              100.000 Vídeos Prontos
-            </span>{' '}
-            que já viralizaram e comece a crescer hoje mesmo, sem aparecer.
-          </p>
-
           <p className="text-[12.5px] sm:text-base font-bold text-[#58D4F2] text-center px-3 mb-3 sm:mb-4 tracking-wide">
             ✓ 100% Sem Copyright (Livre para Monetizar) &nbsp;•&nbsp; ✓ Todos Sem Marca d&apos;Água
           </p>
@@ -192,6 +194,8 @@ export default function App() {
               src="/assets/aistudio/smartphone-packviral_0bd7d211.webp"
             />
           </div>
+
+          <VslPlayer preloadMode={isWheelOpen ? 'metadata' : 'auto'} />
 
           <button
             type="button"
@@ -1121,6 +1125,11 @@ export default function App() {
                   </div>
 
                   <div className="my-3 py-3 px-4 rounded-2xl bg-[#050912]/70 border border-white/10">
+                    {discountUnlocked && (
+                      <div className="inline-block mb-1.5 px-3 py-0.5 rounded-full bg-[#05D321]/20 border border-[#05D321]/60 text-[#49F503] text-[11px] font-[900] uppercase tracking-wider">
+                        🎉 85% OFF DA ROLETA APLICADO
+                      </div>
+                    )}
                     <p className="text-sm sm:text-base italic text-gray-300 mb-0.5 tabular-nums">
                       De <span className="line-through text-red-600 font-bold decoration-2">R$97,00</span>
                     </p>
@@ -1381,6 +1390,15 @@ export default function App() {
       </aside>
 
       <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
+
+      <DiscountWheelModal
+        isOpen={isWheelOpen}
+        onClaimDiscount={() => {
+          setDiscountUnlocked(true);
+          setIsWheelOpen(false);
+        }}
+        onClose={() => setIsWheelOpen(false)}
+      />
     </div>
   );
 }
