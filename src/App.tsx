@@ -187,15 +187,15 @@ export default function App() {
               width={680}
               height={744}
               loading="eager"
-              decoding="sync"
+              decoding="async"
               fetchPriority="high"
               className="w-full h-auto block object-contain select-none"
               draggable={false}
-              src="/assets/aistudio/Smartphone_PackViral_com__cones_Sociais_39017ad6.png"
+              src="/assets/aistudio/smartphone-packviral-v2.webp"
             />
           </div>
 
-          <VslPlayer preloadMode={isWheelOpen ? 'metadata' : 'auto'} />
+          <VslPlayer preloadMode="metadata" />
 
           <button
             type="button"

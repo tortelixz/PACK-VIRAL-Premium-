@@ -9,7 +9,7 @@ interface VslPlayerProps {
 
 export function VslPlayer({
   src = '/assets/aistudio/lv_0_20261116183908_61303a5c.mp4',
-  poster = '/assets/aistudio/smartphone-packviral_0bd7d211.webp',
+  poster = '/assets/aistudio/smartphone-packviral-v2.webp',
   preloadMode = 'metadata',
 }: VslPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);

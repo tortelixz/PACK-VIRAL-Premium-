@@ -233,7 +233,7 @@ export function DiscountWheelModal({ isOpen, onClaimDiscount }: DiscountWheelMod
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#03060E]/88 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-[#03060E]/92"
       role="dialog"
       aria-modal="true"
       aria-labelledby="wheel-modal-title"
@@ -244,29 +244,30 @@ export function DiscountWheelModal({ isOpen, onClaimDiscount }: DiscountWheelMod
         aria-hidden="true"
       />
 
-      <div className="relative z-20 w-full max-w-[430px] rounded-[26px] p-[2px] bg-[linear-gradient(150deg,#58D4F2_0%,#A855F7_52%,#FF2E93_100%)] shadow-[0_0_55px_rgba(88,212,242,0.28),0_24px_70px_rgba(0,0,0,0.85)]">
-        <div className="relative rounded-[24px] bg-[radial-gradient(ellipse_at_top,#102344_0%,#081022_55%,#050914_100%)] px-4 py-5 sm:px-6 sm:py-6 text-center overflow-hidden">
+      <div className="min-h-full flex items-center justify-center p-2.5 sm:p-4">
+        <div className="relative z-20 w-full max-w-[430px] rounded-[26px] p-[2px] bg-[linear-gradient(150deg,#58D4F2_0%,#A855F7_52%,#FF2E93_100%)] shadow-[0_0_55px_rgba(88,212,242,0.28),0_24px_70px_rgba(0,0,0,0.85)]">
+          <div className="relative rounded-[24px] bg-[radial-gradient(ellipse_at_top,#102344_0%,#081022_55%,#050914_100%)] px-4 py-4 sm:px-6 sm:py-6 text-center overflow-hidden">
 
-          {!hasWon ? (
-            <>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05D321]/15 border border-[#05D321]/45 text-[#49F503] text-[11px] font-extrabold uppercase tracking-widest mb-2">
-                <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
-                <span>PRESENTE DE BOAS-VINDAS</span>
-              </div>
+            {!hasWon ? (
+              <>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05D321]/15 border border-[#05D321]/45 text-[#49F503] text-[11px] font-extrabold uppercase tracking-widest mb-1.5">
+                  <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>PRESENTE DE BOAS-VINDAS</span>
+                </div>
 
-              <h2
-                id="wheel-modal-title"
-                className="font-['Plus_Jakarta_Sans',sans-serif] text-[22px] sm:text-[26px] font-[800] text-white leading-[1.12] tracking-[-0.02em] mb-1.5"
-              >
-                Gire a roleta e veja o{' '}
-                <span className="gradient-blue-text">seu desconto.</span>
-              </h2>
-              <p className="text-xs sm:text-sm text-neutral-300 mb-4">
-                Você tem <span className="text-white font-bold">1 giro grátis</span> para liberar seu cupom exclusivo hoje.
-              </p>
+                <h2
+                  id="wheel-modal-title"
+                  className="font-['Plus_Jakarta_Sans',sans-serif] text-[21px] sm:text-[26px] font-[800] text-white leading-[1.12] tracking-[-0.02em] mb-1"
+                >
+                  Gire a roleta e veja o{' '}
+                  <span className="gradient-blue-text">seu desconto.</span>
+                </h2>
+                <p className="text-xs sm:text-sm text-neutral-300 mb-3 sm:mb-4">
+                  Você tem <span className="text-white font-bold">1 giro grátis</span> para liberar seu cupom exclusivo hoje.
+                </p>
 
-              {/* WHEEL CONTAINER */}
-              <div className="relative w-[268px] h-[268px] sm:w-[300px] sm:h-[300px] mx-auto mb-5 select-none">
+                {/* WHEEL CONTAINER */}
+                <div className="relative w-[232px] h-[232px] min-[380px]:w-[254px] min-[380px]:h-[254px] sm:w-[300px] sm:h-[300px] mx-auto mb-4 sm:mb-5 select-none">
                 {/* Outer Neon Glow */}
                 <div
                   className="pointer-events-none absolute -inset-3 rounded-full bg-[radial-gradient(circle,rgba(88,212,242,0.28)_0%,rgba(168,85,247,0.18)_52%,transparent_72%)]"
@@ -417,6 +418,7 @@ export function DiscountWheelModal({ isOpen, onClaimDiscount }: DiscountWheelMod
               </button>
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>
