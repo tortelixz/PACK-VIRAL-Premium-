@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const STEP_INTERVAL_MS = 1000;
+const STEP_INTERVAL_MS = 1500;
 
 export function ScarcitySpotsBadge() {
   const [spotsLeft, setSpotsLeft] = useState(5);

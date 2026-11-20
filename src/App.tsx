@@ -651,9 +651,9 @@ export default function App() {
                 <span className="bg-[linear-gradient(135deg,#FFD60A_0%,#FF6B35_36%,#FF2E93_72%,#A855F7_100%)] bg-clip-text text-transparent font-[900]">
                   GTA 6
                 </span>{' '}
-                VAI PARAR A INTERNET.{' '}
+                JÁ FOI LANÇADO E ESTÁ PARANDO A INTERNET.{' '}
                 <span className="gradient-blue-text drop-shadow-[0_0_20px_rgba(88,212,242,0.4)]">
-                  VOCÊ ESTÁ PREPARADO?
+                  HORA DE LUCRAR COM ISSO!
                 </span>
               </h2>
 
@@ -680,14 +680,17 @@ export default function App() {
                     Pensa comigo...
                   </p>
                   <p className="text-[15px] sm:text-[17px] text-neutral-100 leading-[1.6]">
-                    Um dos jogos <strong className="text-white font-bold">mais aguardados do mundo</strong> está
-                    chegando. <strong className="text-white font-bold">Milhões de pessoas</strong> vão procurar vídeos,
-                    novidades, curiosidades e cortes sobre GTA 6.
+                    O GTA 6 <strong className="text-white font-bold">já foi lançado</strong> e está{' '}
+                    <strong className="text-white font-bold">parando a internet inteira</strong>. Milhares de jovens
+                    estão focados em GTA agora mesmo, consumindo cortes, curiosidades e gameplays o dia todo.
                   </p>
                   <div className="rounded-2xl bg-[linear-gradient(135deg,rgba(88,212,242,0.12)_0%,rgba(147,51,234,0.14)_55%,rgba(255,46,147,0.12)_100%)] border border-[#58D4F2]/45 p-3.5 sm:p-4">
                     <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] sm:text-[17.5px] font-[800] text-white leading-[1.4]">
-                      E enquanto todo mundo estiver procurando esses vídeos, você pode estar{' '}
-                      <span className="text-[#58D4F2]">publicando os seus!</span>
+                      Essa é a sua oportunidade de{' '}
+                      <span className="text-[#58D4F2]">
+                        ganhar milhões de visualizações e lucrar em cima dessa onda
+                      </span>{' '}
+                      publicando vídeos já prontos!
                     </p>
                   </div>
                   <div className="rounded-2xl bg-[#050912]/85 border border-[#FF4DA6]/45 p-3.5 sm:p-4.5 text-center">
