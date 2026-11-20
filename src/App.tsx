@@ -19,6 +19,7 @@ import {
 import { DiscountWheelModal } from './components/DiscountWheelModal';
 import { LegalModal, type LegalModalType } from './components/LegalModal';
 import { ProfileCard } from './components/ProfileCard';
+import { ScarcitySpotsBadge } from './components/ScarcitySpotsBadge';
 import { VslPlayer } from './components/VslPlayer';
 import {
   CHECKOUT_URL,
@@ -1176,6 +1177,7 @@ export default function App() {
                 </div>
 
                 <div>
+                  <ScarcitySpotsBadge />
                   <a
                     href={CHECKOUT_URL}
                     target="_blank"
